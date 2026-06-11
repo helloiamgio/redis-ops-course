@@ -1,0 +1,20 @@
+{
+  "name": "redis-ops-course",
+  "version": "1.0.0",
+  "description": "Corso operativo enterprise su Redis — sito di documentazione Astro Starlight",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.40.0",
+    "astro": "^6.4.6",
+    "astro-mermaid": "^2.0.2",
+    "mermaid": "^11.4.0",
+    "sharp": "^0.35.0"
+  }
+}
