@@ -1,130 +1,72 @@
-/* ============================================================================
-   Redis Operations — tema "rosa fluo, elegante"
-   Accent fluo usato con parsimonia su elementi interattivi/strutturali,
-   tipografia display serif (Fraunces) per contrasto raffinato, dark curato.
-   ============================================================================ */
+/* Redis Operations - tema scuro "rosa fluo", elegante. Dark-only, nessuna
+   dipendenza da data-theme: palette scura e testo chiaro forzati sempre. */
 
 @import '@fontsource-variable/fraunces';
 
-:root {
-  --display-font: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
+:root,
+:root[data-theme='light'] {
+  --display-font: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --fluo: #ff2d95;
+  --fluo-soft: #ff6fb3;
 
-  /* Accent rosa fluo — tema scuro (default) */
-  --fluo: #ff2d95;          /* rosa fluo primario */
-  --fluo-soft: #ff6fb3;     /* rosa più tenue, per testo su scuro */
-  --sl-color-accent-low: #2a0a1c;
-  --sl-color-accent: #d6196f;
-  --sl-color-accent-high: #ffd0e6;
-  --sl-color-text-accent: #ff5fa8;
-
-  /* Sfondi: near-black con una punta fredda, per far risaltare il fluo */
   --sl-color-bg: #0c0a0f;
   --sl-color-bg-nav: #100c14;
   --sl-color-bg-sidebar: #0e0b12;
   --sl-color-bg-inline-code: #1b1320;
 
-  /* Heading "bianco" leggermente caldo */
-  --sl-color-white: #f6eef3;
-}
+  --sl-color-white: #f7f0f5;
+  --sl-color-text: #ece7ef;
+  --sl-color-gray-1: #f7f0f5;
+  --sl-color-gray-2: #ece7ef;
+  --sl-color-gray-3: #d6cfdc;
+  --sl-color-gray-4: #b3aabf;
+  --sl-color-gray-5: #4a4453;
+  --sl-color-gray-6: #2a2531;
 
-/* Leggibilità (tema scuro): il corpo del testo di Starlight è un grigio troppo
-   spento sul fondo near-black. Override con specificità MAGGIORE di Starlight
-   (`:root[data-theme='dark']` batte `:root,::backdrop`), così vince a prescindere
-   dall'ordine di caricamento dei CSS. */
-:root[data-theme='dark'] {
-  --sl-color-text: #ece7ef;        /* paragrafi: quasi bianco */
-  --sl-color-gray-1: #f7f3f9;
-  --sl-color-gray-2: #ece7ef;      /* usato come testo principale */
-  --sl-color-gray-3: #d2cbd9;      /* testo secondario / muted, ora leggibile */
-  --sl-color-gray-4: #a79fb2;
-}
-
-/* Colore diretto sul contenuto, come rete di sicurezza (vince su `.sl-markdown-content`) */
-[data-theme='dark'] .sl-markdown-content,
-[data-theme='dark'] .sl-markdown-content p,
-[data-theme='dark'] .sl-markdown-content li,
-[data-theme='dark'] .sl-markdown-content td {
-  color: #ece7ef;
-}
-[data-theme='dark'] .sl-markdown-content strong {
-  color: var(--sl-color-white);
-}
-
-/* Tema chiaro: stesso accent, declinato per fondo chiaro */
-:root[data-theme='light'] {
-  --fluo: #d6196f;
-  --fluo-soft: #b3155c;
-  --sl-color-accent-low: #ffd6ea;
+  --sl-color-accent-low: #2a0a1c;
   --sl-color-accent: #d6196f;
-  --sl-color-accent-high: #6e0b39;
-  --sl-color-text-accent: #c2155f;
+  --sl-color-accent-high: #ffd0e6;
+  --sl-color-text-accent: #ff5fa8;
 }
 
-/* ---- Tipografia display: titolo sito + intestazioni principali ---- */
+starlight-theme-select { display: none; }
+
+.sl-markdown-content,
+.sl-markdown-content p,
+.sl-markdown-content li,
+.sl-markdown-content td,
+.sl-markdown-content dd,
+.sl-markdown-content blockquote {
+  color: #ece7ef !important;
+}
+.sl-markdown-content strong,
+.sl-markdown-content b,
+.sl-markdown-content th {
+  color: #ffffff !important;
+}
+
 .site-title {
   font-family: var(--display-font);
   font-weight: 600;
-  font-optical-sizing: auto;
-  letter-spacing: -0.015em;
-  font-size: 1.4rem;
-  background: linear-gradient(92deg, var(--sl-color-white) 0%, var(--fluo-soft) 110%);
+  letter-spacing: -.015em;
+  background: linear-gradient(92deg, var(--sl-color-white), var(--fluo-soft) 120%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 main h1,
 .sl-markdown-content h1,
 .sl-markdown-content h2,
 .sl-markdown-content h3 {
   font-family: var(--display-font);
-  font-optical-sizing: auto;
-  letter-spacing: -0.018em;
+  letter-spacing: -.018em;
   font-weight: 600;
 }
-
-/* Riga sottile fluo sotto gli h2, per ritmo visivo (discreta) */
 .sl-markdown-content h2 {
-  padding-bottom: 0.2em;
-  border-bottom: 1px solid color-mix(in srgb, var(--fluo) 22%, transparent);
+  padding-bottom: .2em;
+  border-bottom: 1px solid rgba(255, 45, 149, .22);
 }
-
-/* L'ancora "#" accanto ai titoli eredita l'accent: la rendiamo fluo piena */
-.sl-markdown-content .sl-anchor-link {
-  color: var(--fluo);
-}
-
-/* ---- Dettagli interattivi in fluo (con misura) ---- */
-.sl-markdown-content a {
-  text-underline-offset: 0.2em;
-  text-decoration-color: color-mix(in srgb, var(--fluo) 45%, transparent);
-}
-.sl-markdown-content a:hover {
-  text-decoration-color: var(--fluo);
-}
-
-/* Bordo sinistro dei blockquote in fluo tenue */
-.sl-markdown-content blockquote {
-  border-inline-start-color: var(--fluo);
-}
-
-/* Selezione testo */
-::selection {
-  background: color-mix(in srgb, var(--fluo) 35%, transparent);
-}
-
-/* Focus ring accessibile in fluo */
-:focus-visible {
-  outline: 2px solid var(--fluo);
-  outline-offset: 2px;
-}
-
-/* Voce di sidebar attiva: barra fluo + testo accent */
-.sidebar a[aria-current='page'] {
-  border-inline-start: 2px solid var(--fluo);
-}
-
-/* Tabelle: intestazione con sfondo accent tenue */
-.sl-markdown-content table thead th {
-  background: color-mix(in srgb, var(--fluo) 10%, transparent);
-}
+.sl-markdown-content blockquote { border-inline-start-color: var(--fluo); }
+::selection { background: rgba(255, 45, 149, .35); }
+.sidebar a[aria-current='page'] { border-inline-start: 2px solid var(--fluo); }
+.sl-markdown-content table thead th { background: rgba(255, 45, 149, .10); }
