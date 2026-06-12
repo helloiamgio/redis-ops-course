@@ -38,6 +38,7 @@ export default defineConfig({
       sidebar: [
         { label: 'Introduzione', link: '/' },
         { label: '00 · Parti da qui', link: '/00-introduzione/' },
+        { label: 'Cheatsheet comandi', link: '/cheatsheet/' },
         {
           label: 'Fondamenti',
           items: [

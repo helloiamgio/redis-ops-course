@@ -64,8 +64,9 @@ programmare.
 | 11 | [Produzione enterprise e go-live](11-produzione-enterprise.md) | Sizing, topologie, sicurezza/governance, SLO, runbook, checklist |
 | 12 | [Redis su Kubernetes e OpenShift](12-kubernetes-openshift.md) | StatefulSet, Operator (opstree/spotahome/Enterprise), PVC, HA, note OpenShift |
 
-Il **modulo 00** è la rampa d'accesso per chi parte da zero. I moduli 01–08, 10 e
-11 sono teoria + comandi. Il **modulo 09** è il workbook pratico: ogni lab richiama
+Il **modulo 00** è la rampa d'accesso per chi parte da zero, e il
+**[Cheatsheet comandi](cheatsheet.md)** è il riferimento rapido ops-ready con
+tutti i comandi. I moduli 01–08, 10 e 11 sono teoria + comandi. Il **modulo 09** è il workbook pratico: ogni lab richiama
 i concetti del modulo corrispondente. Tutti i comandi e i flussi dei lab
 (standalone, persistenza, ACL/TLS, replica+Sentinel, cluster con reshard e
 failover, monitoring, backup/restore, troubleshooting) sono stati **eseguiti e

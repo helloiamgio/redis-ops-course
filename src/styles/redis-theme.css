@@ -25,20 +25,30 @@
 
   /* Heading "bianco" leggermente caldo */
   --sl-color-white: #f6eef3;
-
-  /* Leggibilità: corpo del testo quasi bianco + grigi secondari più chiari.
-     (Lo Starlight di default usa un grigio troppo spento sul fondo near-black.) */
-  --sl-color-text: #ece7ef;        /* paragrafi */
-  --sl-color-gray-1: #f4eff6;
-  --sl-color-gray-2: #ece7ef;      /* usato come testo principale in dark */
-  --sl-color-gray-3: #cfc7d6;      /* testo secondario / muted, ora leggibile */
-  --sl-color-gray-4: #9a92a4;
 }
 
-/* Forza il colore chiaro sul contenuto e sugli elementi di prosa */
-.sl-markdown-content { color: var(--sl-color-text); }
-.sl-markdown-content strong { color: var(--sl-color-white); }
-.sl-markdown-content li { color: var(--sl-color-text); }
+/* Leggibilità (tema scuro): il corpo del testo di Starlight è un grigio troppo
+   spento sul fondo near-black. Override con specificità MAGGIORE di Starlight
+   (`:root[data-theme='dark']` batte `:root,::backdrop`), così vince a prescindere
+   dall'ordine di caricamento dei CSS. */
+:root[data-theme='dark'] {
+  --sl-color-text: #ece7ef;        /* paragrafi: quasi bianco */
+  --sl-color-gray-1: #f7f3f9;
+  --sl-color-gray-2: #ece7ef;      /* usato come testo principale */
+  --sl-color-gray-3: #d2cbd9;      /* testo secondario / muted, ora leggibile */
+  --sl-color-gray-4: #a79fb2;
+}
+
+/* Colore diretto sul contenuto, come rete di sicurezza (vince su `.sl-markdown-content`) */
+[data-theme='dark'] .sl-markdown-content,
+[data-theme='dark'] .sl-markdown-content p,
+[data-theme='dark'] .sl-markdown-content li,
+[data-theme='dark'] .sl-markdown-content td {
+  color: #ece7ef;
+}
+[data-theme='dark'] .sl-markdown-content strong {
+  color: var(--sl-color-white);
+}
 
 /* Tema chiaro: stesso accent, declinato per fondo chiaro */
 :root[data-theme='light'] {
