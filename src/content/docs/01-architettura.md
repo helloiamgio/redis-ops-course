@@ -6,6 +6,10 @@ description: "Modello in-memory, esecuzione single-thread, encoding interni, mem
 Obiettivo: capire *come* Redis usa CPU, memoria e disco, perché questo determina
 ogni scelta operativa successiva (sizing, persistenza, latenza, eviction).
 
+> **Parti da zero?** Se termini come *cache*, *chiave-valore*, *demone* o *porta*
+> non ti sono familiari, leggi prima il [modulo 00](00-introduzione.md): spiega le
+> basi e il glossario su cui questo modulo si appoggia.
+
 ---
 
 ## 1.1 Cos'è Redis, dal punto di vista ops

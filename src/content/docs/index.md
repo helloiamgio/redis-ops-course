@@ -50,6 +50,7 @@ programmare.
 
 | # | Modulo | Contenuto |
 |---|---|---|
+| 00 | [Introduzione (parti da qui)](00-introduzione.md) | Per chi parte da zero: concetti, glossario, prerequisiti, self-managed vs managed (Redis Cloud) vs K8s |
 | 01 | [Architettura e fondamenti](01-architettura.md) | Modello in-memory, single-thread, memoria, persistenza, RESP |
 | 02 | [Installazione standalone](02-installazione-standalone.md) | RHEL 9 (repo, AppStream, sorgente), macOS, layout, systemd |
 | 03 | [Configurazione e sicurezza](03-configurazione-sicurezza.md) | `redis.conf`, `CONFIG`, ACL, TLS, hardening |
@@ -61,12 +62,15 @@ programmare.
 | 09 | [Laboratori pratici](09-lab.md) | 8 lab + capstone, con soluzioni, eseguibili su RHEL/macOS |
 | 10 | [Casi d'uso](10-casi-uso.md) | Cache, sessioni, rate limiting, lock, code/Stream, pub/sub |
 | 11 | [Produzione enterprise e go-live](11-produzione-enterprise.md) | Sizing, topologie, sicurezza/governance, SLO, runbook, checklist |
+| 12 | [Redis su Kubernetes e OpenShift](12-kubernetes-openshift.md) | StatefulSet, Operator (opstree/spotahome/Enterprise), PVC, HA, note OpenShift |
 
-I moduli 01–08, 10 e 11 sono teoria + comandi. Il **modulo 09** è il workbook
-pratico: ogni lab richiama i concetti del modulo corrispondente. Tutti i comandi
-e i flussi dei lab (standalone, persistenza, ACL/TLS, replica+Sentinel, cluster
-con reshard e failover, monitoring, backup/restore, troubleshooting) sono stati
-**eseguiti e validati** su Redis reale.
+Il **modulo 00** è la rampa d'accesso per chi parte da zero. I moduli 01–08, 10 e
+11 sono teoria + comandi. Il **modulo 09** è il workbook pratico: ogni lab richiama
+i concetti del modulo corrispondente. Tutti i comandi e i flussi dei lab
+(standalone, persistenza, ACL/TLS, replica+Sentinel, cluster con reshard e
+failover, monitoring, backup/restore, troubleshooting) sono stati **eseguiti e
+validati** su Redis reale. Il **modulo 12** (Kubernetes/OpenShift) è basato sulla
+documentazione ufficiale e va verificato sul proprio cluster.
 
 ---
 

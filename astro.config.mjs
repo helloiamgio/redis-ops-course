@@ -5,15 +5,14 @@ import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
-  // Su Cloudflare Pages il sito è statico (SSG): nessun adapter necessario.
   // Imposta `site` con l'URL definitivo per sitemap/canonical (facoltativo).
   // site: 'https://redis-ops-course.pages.dev',
   integrations: [
     // ⚠️ astro-mermaid DEVE precedere starlight: intercetta i blocchi ```mermaid
     // e li renderizza lato client (nessun headless browser al build → ok su CF Pages).
     mermaid({
-      theme: 'default',
-      autoTheme: true, // segue il tema chiaro/scuro di Starlight
+      theme: 'dark',     // coerente col tema scuro fluo
+      autoTheme: true,   // segue il toggle chiaro/scuro di Starlight
     }),
     starlight({
       title: 'Redis Operations',
@@ -22,6 +21,12 @@ export default defineConfig({
       defaultLocale: 'it',
       locales: {
         root: { label: 'Italiano', lang: 'it' },
+      },
+      // Tema "rosa fluo, elegante"
+      customCss: ['./src/styles/redis-theme.css'],
+      // Tema dei blocchi di codice (Expressive Code)
+      expressiveCode: {
+        themes: ['github-dark-default', 'github-light'],
       },
       social: [
         {
@@ -32,6 +37,7 @@ export default defineConfig({
       ],
       sidebar: [
         { label: 'Introduzione', link: '/' },
+        { label: '00 · Parti da qui', link: '/00-introduzione/' },
         {
           label: 'Fondamenti',
           items: [
@@ -68,9 +74,10 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Enterprise',
+          label: 'Enterprise e cloud-native',
           items: [
             { label: '11 · Produzione enterprise', link: '/11-produzione-enterprise/' },
+            { label: '12 · Kubernetes e OpenShift', link: '/12-kubernetes-openshift/' },
           ],
         },
         { label: 'Repository e deploy', link: '/deploy/' },
