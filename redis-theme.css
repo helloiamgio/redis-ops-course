@@ -1,0 +1,120 @@
+/* ============================================================================
+   Redis Operations — tema "rosa fluo, elegante"
+   Accent fluo usato con parsimonia su elementi interattivi/strutturali,
+   tipografia display serif (Fraunces) per contrasto raffinato, dark curato.
+   ============================================================================ */
+
+@import '@fontsource-variable/fraunces';
+
+:root {
+  --display-font: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  /* Accent rosa fluo — tema scuro (default) */
+  --fluo: #ff2d95;          /* rosa fluo primario */
+  --fluo-soft: #ff6fb3;     /* rosa più tenue, per testo su scuro */
+  --sl-color-accent-low: #2a0a1c;
+  --sl-color-accent: #d6196f;
+  --sl-color-accent-high: #ffd0e6;
+  --sl-color-text-accent: #ff5fa8;
+
+  /* Sfondi: near-black con una punta fredda, per far risaltare il fluo */
+  --sl-color-bg: #0c0a0f;
+  --sl-color-bg-nav: #100c14;
+  --sl-color-bg-sidebar: #0e0b12;
+  --sl-color-bg-inline-code: #1b1320;
+
+  /* Heading "bianco" leggermente caldo */
+  --sl-color-white: #f6eef3;
+
+  /* Leggibilità: corpo del testo quasi bianco + grigi secondari più chiari.
+     (Lo Starlight di default usa un grigio troppo spento sul fondo near-black.) */
+  --sl-color-text: #ece7ef;        /* paragrafi */
+  --sl-color-gray-1: #f4eff6;
+  --sl-color-gray-2: #ece7ef;      /* usato come testo principale in dark */
+  --sl-color-gray-3: #cfc7d6;      /* testo secondario / muted, ora leggibile */
+  --sl-color-gray-4: #9a92a4;
+}
+
+/* Forza il colore chiaro sul contenuto e sugli elementi di prosa */
+.sl-markdown-content { color: var(--sl-color-text); }
+.sl-markdown-content strong { color: var(--sl-color-white); }
+.sl-markdown-content li { color: var(--sl-color-text); }
+
+/* Tema chiaro: stesso accent, declinato per fondo chiaro */
+:root[data-theme='light'] {
+  --fluo: #d6196f;
+  --fluo-soft: #b3155c;
+  --sl-color-accent-low: #ffd6ea;
+  --sl-color-accent: #d6196f;
+  --sl-color-accent-high: #6e0b39;
+  --sl-color-text-accent: #c2155f;
+}
+
+/* ---- Tipografia display: titolo sito + intestazioni principali ---- */
+.site-title {
+  font-family: var(--display-font);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  font-size: 1.4rem;
+  background: linear-gradient(92deg, var(--sl-color-white) 0%, var(--fluo-soft) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main h1,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+}
+
+/* Riga sottile fluo sotto gli h2, per ritmo visivo (discreta) */
+.sl-markdown-content h2 {
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid color-mix(in srgb, var(--fluo) 22%, transparent);
+}
+
+/* L'ancora "#" accanto ai titoli eredita l'accent: la rendiamo fluo piena */
+.sl-markdown-content .sl-anchor-link {
+  color: var(--fluo);
+}
+
+/* ---- Dettagli interattivi in fluo (con misura) ---- */
+.sl-markdown-content a {
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--fluo) 45%, transparent);
+}
+.sl-markdown-content a:hover {
+  text-decoration-color: var(--fluo);
+}
+
+/* Bordo sinistro dei blockquote in fluo tenue */
+.sl-markdown-content blockquote {
+  border-inline-start-color: var(--fluo);
+}
+
+/* Selezione testo */
+::selection {
+  background: color-mix(in srgb, var(--fluo) 35%, transparent);
+}
+
+/* Focus ring accessibile in fluo */
+:focus-visible {
+  outline: 2px solid var(--fluo);
+  outline-offset: 2px;
+}
+
+/* Voce di sidebar attiva: barra fluo + testo accent */
+.sidebar a[aria-current='page'] {
+  border-inline-start: 2px solid var(--fluo);
+}
+
+/* Tabelle: intestazione con sfondo accent tenue */
+.sl-markdown-content table thead th {
+  background: color-mix(in srgb, var(--fluo) 10%, transparent);
+}
