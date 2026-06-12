@@ -25,7 +25,20 @@
 
   /* Heading "bianco" leggermente caldo */
   --sl-color-white: #f6eef3;
+
+  /* Leggibilità: corpo del testo quasi bianco + grigi secondari più chiari.
+     (Lo Starlight di default usa un grigio troppo spento sul fondo near-black.) */
+  --sl-color-text: #ece7ef;        /* paragrafi */
+  --sl-color-gray-1: #f4eff6;
+  --sl-color-gray-2: #ece7ef;      /* usato come testo principale in dark */
+  --sl-color-gray-3: #cfc7d6;      /* testo secondario / muted, ora leggibile */
+  --sl-color-gray-4: #9a92a4;
 }
+
+/* Forza il colore chiaro sul contenuto e sugli elementi di prosa */
+.sl-markdown-content { color: var(--sl-color-text); }
+.sl-markdown-content strong { color: var(--sl-color-white); }
+.sl-markdown-content li { color: var(--sl-color-text); }
 
 /* Tema chiaro: stesso accent, declinato per fondo chiaro */
 :root[data-theme='light'] {
