@@ -343,4 +343,4 @@ change immediato.
 4. `rdb_last_bgsave_status:err` con disco libero e permessi corretti. Quale
    parametro del kernel guardi?
 
-Prossimo passo: [07 · Capstone](/scale/07-capstone/).
+Prossimo passo: [07 · Workload applicativi reali](/scale/07-workload-reali/).

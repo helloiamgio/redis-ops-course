@@ -68,7 +68,22 @@ echo "OK"
 
 ---
 
-## Consegna 3 — Rompi
+## Consegna 3 — Carico realistico
+
+Prima di rompere, metti sotto carico applicativo la topologia che hai
+costruito, usando i profili dell'[unità 07](/scale/07-workload-reali/):
+
+```bash
+python3 labs/app/workload.py sessions --host <master> --ops 50000 --keyspace 200000
+python3 labs/app/workload.py roundtrip --host <master> --ops 20000
+```
+
+Registra baseline di ops/s, hit ratio, `used_memory_peak` e slowlog. Sono i
+numeri contro cui misurerai il degrado durante i guasti.
+
+---
+
+## Consegna 4 — Rompi
 
 Esegui questi guasti e **cronometra il recupero**:
 
@@ -91,7 +106,7 @@ scoprono in produzione. Riprodurlo qui costa cinque minuti.
 
 ---
 
-## Consegna 4 — Documenta
+## Consegna 5 — Documenta
 
 Produci tre artefatti, quelli che servono davvero al passaggio in esercizio:
 
@@ -130,5 +145,6 @@ documentazione:
 - [12 · Kubernetes e OpenShift](/12-kubernetes-openshift/) — la stessa
   topologia con operator e StatefulSet
 - [06 · Memoria e tuning](/scale/06-memoria/) — encoding, eviction, kernel
+- [07 · Workload applicativi reali](/scale/07-workload-reali/) — generatore di carico
 - [13 · Connessioni e client tuning](/13-connessioni-client-tuning/) — il
   riferimento teorico dell'unità 01
