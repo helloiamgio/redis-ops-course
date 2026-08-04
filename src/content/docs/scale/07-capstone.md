@@ -129,5 +129,6 @@ documentazione:
   runbook, go-live
 - [12 · Kubernetes e OpenShift](/12-kubernetes-openshift/) — la stessa
   topologia con operator e StatefulSet
+- [06 · Memoria e tuning](/scale/06-memoria/) — encoding, eviction, kernel
 - [13 · Connessioni e client tuning](/13-connessioni-client-tuning/) — il
   riferimento teorico dell'unità 01

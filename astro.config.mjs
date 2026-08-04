@@ -12,7 +12,9 @@ export default defineConfig({
     // e li renderizza lato client (nessun headless browser al build → ok su CF Pages).
     mermaid({
       theme: 'dark',     // coerente col tema scuro fluo
-      autoTheme: true,   // segue il toggle chiaro/scuro di Starlight
+      autoTheme: false,  // il sito è dark-only: NON seguire il tema di sistema,
+                         // altrimenti in light mode i nodi diventano chiari
+                         // con testo chiaro forzato dal CSS -> illeggibili
     }),
     starlight({
       title: 'Redis Operations',
@@ -26,7 +28,7 @@ export default defineConfig({
       customCss: ['./src/styles/redis-theme.css'],
       // Tema dei blocchi di codice (Expressive Code)
       expressiveCode: {
-        themes: ['github-dark-default', 'github-light'],
+        themes: ['github-dark-default'],   // dark-only: nessuna variante chiara
       },
       social: [
         {
@@ -92,7 +94,8 @@ export default defineConfig({
             { label: '03 · Alta disponibilit\u00e0', link: '/scale/03-alta-disponibilita/' },
             { label: '04 · Scalabilit\u00e0', link: '/scale/04-scalabilita/' },
             { label: '05 · Osservabilit\u00e0', link: '/scale/05-osservabilita/' },
-            { label: '06 · Capstone', link: '/scale/06-capstone/' },
+            { label: '06 · Memoria e tuning', link: '/scale/06-memoria/' },
+            { label: '07 · Capstone', link: '/scale/07-capstone/' },
           ],
         },
         { label: 'Repository e deploy', link: '/deploy/' },

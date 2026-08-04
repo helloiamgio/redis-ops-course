@@ -206,4 +206,4 @@ del runbook di primo livello.
 3. `slowlog-log-slower-than 10000`: quale soglia hai impostato davvero?
 4. Quale singola allerta rileva un'HA rotta prima del failover?
 
-Prossimo passo: [06 · Capstone](/scale/06-capstone/).
+Prossimo passo: [06 · Memoria e tuning](/scale/06-memoria/).

@@ -27,6 +27,21 @@
   --sl-color-accent: #d6196f;
   --sl-color-accent-high: #ffd0e6;
   --sl-color-text-accent: #ff5fa8;
+
+  /* Starlight in light mode assegna sfondi CHIARI agli aside (note/tip/caution/
+     danger) mentre il testo resta forzato chiaro -> illeggibile. Qui ricalchiamo
+     i valori della palette dark di Starlight, incondizionatamente. */
+  color-scheme: dark !important;
+  --sl-color-blue-low:    hsl(var(--sl-hue-blue), 54%, 20%) !important;
+  --sl-color-blue-high:   hsl(var(--sl-hue-blue), 100%, 87%) !important;
+  --sl-color-purple-low:  hsl(var(--sl-hue-purple), 39%, 22%) !important;
+  --sl-color-purple-high: hsl(var(--sl-hue-purple), 82%, 89%) !important;
+  --sl-color-orange-low:  hsl(var(--sl-hue-orange), 39%, 22%) !important;
+  --sl-color-orange-high: hsl(var(--sl-hue-orange), 82%, 87%) !important;
+  --sl-color-red-low:     hsl(var(--sl-hue-red), 39%, 22%) !important;
+  --sl-color-red-high:    hsl(var(--sl-hue-red), 82%, 87%) !important;
+  --sl-color-green-low:   hsl(var(--sl-hue-green), 39%, 22%) !important;
+  --sl-color-green-high:  hsl(var(--sl-hue-green), 82%, 80%) !important;
 }
 
 starlight-theme-select { display: none; }
@@ -70,3 +85,46 @@ main h1,
 ::selection { background: rgba(255, 45, 149, .35); }
 .sidebar a[aria-current='page'] { border-inline-start: 2px solid var(--fluo); }
 .sl-markdown-content table thead th { background: rgba(255, 45, 149, .10); }
+
+/* --- Aside: testo chiaro su fondo scuro, sempre --- */
+.starlight-aside,
+.starlight-aside p,
+.starlight-aside li,
+.starlight-aside code {
+  color: #ece7ef !important;
+}
+.starlight-aside__title { color: var(--sl-color-asides-text-accent) !important; }
+.starlight-aside code {
+  background: rgba(255, 255, 255, .08) !important;
+}
+
+/* --- Mermaid: forziamo il rendering scuro e leggibile --- */
+.mermaid svg { background: transparent; }
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .label,
+.mermaid .messageText,
+.mermaid .actor,
+.mermaid text {
+  fill: #ece7ef !important;
+  color: #ece7ef !important;
+}
+.mermaid .edgeLabel rect,
+.mermaid .labelBkg { background: transparent !important; fill: #14101a !important; }
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle,
+.mermaid .cluster rect {
+  fill: #1b1320 !important;
+  stroke: rgba(255, 45, 149, .45) !important;
+}
+.mermaid .actor { stroke: rgba(255, 45, 149, .45) !important; }
+.mermaid .actor > rect,
+.mermaid rect.actor { fill: #1b1320 !important; }
+.mermaid .note { fill: #241a2c !important; stroke: rgba(255,45,149,.35) !important; }
+.mermaid .messageLine0,
+.mermaid .messageLine1,
+.mermaid .edgePath .path,
+.mermaid .flowchart-link { stroke: #b3aabf !important; }
+.mermaid marker path,
+.mermaid .arrowheadPath { fill: #b3aabf !important; stroke: #b3aabf !important; }

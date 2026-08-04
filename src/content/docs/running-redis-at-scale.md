@@ -31,7 +31,8 @@ finale. Tutti i comandi sono stati validati su Redis reale.
 | 3 · High Availability | [03 · Alta disponibilità](/scale/03-alta-disponibilita/) |
 | 4 · Scalability | [04 · Scalabilità](/scale/04-scalabilita/) |
 | 5 · Observability | [05 · Osservabilità](/scale/05-osservabilita/) |
-| — | [06 · Capstone](/scale/06-capstone/) |
+| — | [06 · Memoria e tuning](/scale/06-memoria/) |
+| — | [07 · Capstone](/scale/07-capstone/) |
 
 ---
 
