@@ -39,6 +39,7 @@ export default defineConfig({
         { label: 'Introduzione', link: '/' },
         { label: '00 · Parti da qui', link: '/00-introduzione/' },
         { label: 'Cheatsheet comandi', link: '/cheatsheet/' },
+        { label: 'Percorso · Running Redis at Scale', link: '/running-redis-at-scale/' },
         {
           label: 'Fondamenti',
           items: [
@@ -64,6 +65,7 @@ export default defineConfig({
           label: 'Operatività',
           items: [
             { label: '07 · Monitoring e tuning', link: '/07-monitoring-tuning/' },
+            { label: '13 · Connessioni e client tuning', link: '/13-connessioni-client-tuning/' },
             { label: '08 · Backup, upgrade, troubleshooting', link: '/08-backup-upgrade-troubleshooting/' },
           ],
         },
@@ -79,6 +81,18 @@ export default defineConfig({
           items: [
             { label: '11 · Produzione enterprise', link: '/11-produzione-enterprise/' },
             { label: '12 · Kubernetes e OpenShift', link: '/12-kubernetes-openshift/' },
+          ],
+        },
+        {
+          label: 'Percorso hands-on · Scale',
+          items: [
+            { label: '00 · Setup dell\u2019ambiente', link: '/scale/00-setup/' },
+            { label: '01 · Connessioni', link: '/scale/01-connessioni/' },
+            { label: '02 · Persistenza e durabilit\u00e0', link: '/scale/02-persistenza/' },
+            { label: '03 · Alta disponibilit\u00e0', link: '/scale/03-alta-disponibilita/' },
+            { label: '04 · Scalabilit\u00e0', link: '/scale/04-scalabilita/' },
+            { label: '05 · Osservabilit\u00e0', link: '/scale/05-osservabilita/' },
+            { label: '06 · Capstone', link: '/scale/06-capstone/' },
           ],
         },
         { label: 'Repository e deploy', link: '/deploy/' },
